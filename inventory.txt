@@ -1,4 +1,4 @@
 [servers]
 
-Target1  172.17.0.2  ansible_host=ssh 
-Target2  172.17.0.3  ansible_host=ssh
+Target1  ansible_host=172.17.0.2  ansible_user = root
+Target2  ansible_host=172.17.0.3  ansible_user = root
