@@ -1,0 +1,34 @@
+---
+-
+  name:  Install docker on Target machines
+  hosts:  servers
+  any_fatal_errors:  true
+  tasks:
+    -
+      name:  remove pre installed docker
+      yum:  name={{ item }} state=absent
+      with_items:
+        - docker
+        - docker-client
+        - docker-client-latest
+        - docker-common
+        - docker-latest
+        - docker-latest-logrotate
+        - docker-logrotate
+        - docker-engine
+      ignore_errors:  yes
+    -
+      name: install yum utils
+      yum:  name=yum-utils state=installed
+      ignore_errors:  yes
+    -
+      name:  install dependencies
+      command:  sudo yum-config-manager \
+                --add-repo \
+                https://download.docker.com/linux/centos/docker-ce.repo
+    -  
+       name:  install docker
+       command:  sudo yum install docker-ce docker-ce-cli containerd.io
+    -
+       name: start docker service
+       command:  sudo systemctl start docker
