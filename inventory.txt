@@ -1,4 +1,4 @@
 [servers]
 
-Target1
-Target2
+Target1  172.17.0.2  ansible_host=ssh 
+Target2  172.17.0.3  ansible_host=ssh
