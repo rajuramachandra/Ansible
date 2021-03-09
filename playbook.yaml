@@ -2,7 +2,6 @@
 -
   name:  Install docker on Target machines
   hosts:  servers
-  any_fatal_errors:  true
   tasks:
     -
       name:  remove pre installed docker
