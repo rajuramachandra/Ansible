@@ -1,7 +1,7 @@
 ---
 -
   name:  Install docker on Target machines
-  hosts:  servers
+  hosts:  Target1, Target2
   tasks:
     -
       name:  remove pre installed docker
