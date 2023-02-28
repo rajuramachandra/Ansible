@@ -33,6 +33,7 @@ jobs:
         run: |
           echo $PATH
           export PATH="$PATH:c:\butchi.k"
+          echo $PATH
           
       # Runs a single command using the runners shell
       - name: Run a one-line script
