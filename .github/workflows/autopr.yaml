@@ -1,0 +1,13 @@
+name: Echo Command Workflow
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Command
+        run: |
+          echo "Hello, world!"
