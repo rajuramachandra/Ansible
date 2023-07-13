@@ -13,6 +13,7 @@ pipeline {
                 ])
             }
         }
+        
         stage('Process Payload') {
             steps {
                 script {
