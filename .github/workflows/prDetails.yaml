@@ -17,5 +17,5 @@ jobs:
         env:
           PR_NUMBER: ${{ github.event.number }}
           GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
-        run: gh pr view $PR_NUMBER
+        run: gh pr comment $PR_NUMBER --body "Thank you for your contribution"
         
