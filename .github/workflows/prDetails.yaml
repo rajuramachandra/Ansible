@@ -9,11 +9,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:        
+    steps:     
+      - name: 'Checkout repository'
+        uses: actions/checkout@v3
+        
       - name: Save PR number
         env:
           PR_NUMBER: ${{ github.event.number }}
-        run: |
-          mkdir -p ./pr
-          echo $PR_NUMBER
-          echo $PR_NUMBER > ./pr/pr_number
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: gh pr comment $PR_NUMBER --body "Thank you for your contribution"
+        
