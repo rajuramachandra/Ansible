@@ -13,7 +13,6 @@ jobs:
       - name: Save PR number
         env:
           PR_NUMBER: ${{ github.event.number }}
-        run: |
-          mkdir -p ./pr
-          echo $PR_NUMBER
-          echo $PR_NUMBER > ./pr/pr_number
+          GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+        run: gh pr view $PR_NUMBER
+        
