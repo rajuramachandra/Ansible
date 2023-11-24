@@ -16,7 +16,7 @@ jobs:
       - name: Commit message
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: echo ${{ github.event.commits[][message] }}
+        run: echo ${{ github.event.commits[message] }}
         
       - name: Save PR number
         env:
